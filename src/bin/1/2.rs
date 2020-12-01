@@ -15,19 +15,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 
   for outer_i in 0..leger.len() {
     for inner_i in outer_i..leger.len() {
-      for inner_inner_i in outer_i..leger.len() {
-        let num = leger[outer_i] + leger[inner_i] + leger[inner_inner_i];
-        if num == 2020 {
-          println!(
-            "Answer: {}",
-            leger[outer_i] * leger[inner_i] * leger[inner_inner_i]
-          );
-          return Ok(());
-        }
-
-        if num > 2020 {
-          break;
-        }
+      let a = leger[outer_i];
+      let b = leger[inner_i];
+      let mut target = 2020 - a;
+      if b > target {
+        break;
+      }
+      target -= b;
+      if let Ok(_) = leger.binary_search(&target) {
+        println!("Answer: {}", target * a * b);
+        return Ok(());
       }
     }
   }
