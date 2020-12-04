@@ -1,4 +1,4 @@
-use std::{collections::HashMap, error::Error};
+use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
   let buf = AOC2020::read_datafile("2.txt")?;
@@ -13,7 +13,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let val = range_val.next().unwrap().chars().next().unwrap();
     let string = tokens.next().unwrap();
 
-    // let mut map = HashMap::<_, u32>::new();
+    // let mut map = std::collections::HashMap::<_, u32>::new();
     // for key in string.chars() {
     //   let count = map.entry(key).or_insert(0);
     //   *count += 1;
