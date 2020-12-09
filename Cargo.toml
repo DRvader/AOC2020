@@ -71,3 +71,11 @@ path = "src/bin/8/1.rs"
 [[bin]]
 name = "d8_2"
 path = "src/bin/8/2.rs"
+
+[[bin]]
+name = "d9_1"
+path = "src/bin/9/1.rs"
+
+[[bin]]
+name = "d9_2"
+path = "src/bin/9/2.rs"
